@@ -34,7 +34,7 @@ def main():
     model_object.visualize_model()
     print("Visualizing model PNG saved")
 
-    optim = tf.keras.optimzers.Adam(learning_rate=FLAGS.lr)
+    optim = tf.keras.optimizers.Adam(learning_rate=FLAGS.lr)
     model.compile(loss="categorical_crossentropy",optimizer=optim,metrics=["accuracy"])
 
     trainner.train(model,FLAGS.epoch,FLAGS.batch_size,dataset,chkpt_dir = CKPT_DIR)
