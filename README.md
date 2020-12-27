@@ -2,7 +2,7 @@
 Perform OCR on alphabets and digits using tensorflow 
 
 ## Usage
-'''python run.py --epoch 20 --lr 1e-4 --batch_size 64 --model_size 32'''
+``` python run.py --epoch 20 --lr 1e-4 --batch_size 64 --model_size 32 ```
 <br>
 ## Requirements
  * Tensorflow 2.2.0
