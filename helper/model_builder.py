@@ -50,5 +50,5 @@ class Model():
     
     def visualize_model(self):
         tf.keras.utils.plot_model(
-            model, to_file='model.png', show_shapes=True, show_dtype=True,
+            self.model, to_file='model.png', show_shapes=True, show_dtype=True,
             show_layer_names=True, rankdir='TB', expand_nested=False, dpi=96    )

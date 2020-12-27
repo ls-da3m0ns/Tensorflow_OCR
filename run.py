@@ -27,11 +27,13 @@ def main():
     db.DataBuilder()
     dataset = dl.Dataset()
     model_object = mb.Model()
-    model_object.visualize_model()
-    print("Visualizing model PNG saved")
+    
     model = model_object.compelete_model(FLAGS.model_size)
     print(f"model summary \n{model.summary()}")
 
+    model_object.visualize_model()
+    print("Visualizing model PNG saved")
+    
     optim = tf.keras.optimziers.Adam(learning_rate=FLAGS.lr)
     model.compile(loss="categorical_crossentropy",optimizer=optim,metrics=["accuracy"])
 

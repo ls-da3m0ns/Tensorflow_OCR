@@ -1,14 +1,21 @@
 import os
 import numpy as np 
+import gdown
 import tensorflow as tf
 
 class DataBuilder():
     def __init__(self):
         print("DataBuilder called \nStarting Gathering Data ...")
         #os.system("wget https://www.transfernow.net/Q1QvxL122020")
-        if not os.path.exists("./A_Z Handwritten Data.csv"):
+        if os.path.exists("./A_Z Handwritten Data.csv") is False:
+            gdown.download("https://drive.google.com/u/0/uc?id=1YWcKWGrLdq1QD9yM7OeReG6ZEM-dNjkK&export=download","archive.zip",quiet=True)
             os.system("unzip archive.zip")
-            
+
+        if os.path.exists("./temp_files") is False:
+            os.mkdir("./temp_files")
+        
+        
+        print("combine and save process started")
         self.combine_dataset()
         print("combine and save process compelete")
     
